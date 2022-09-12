@@ -41,12 +41,12 @@ public:
 	string insert(string word);
 	string find(string word);
 	void printInformation() {
-
-		std::cout << "Количество элементов: " << number_of_elements << ";\n";
+	std::cout << "--- Хэш-таблица ---\n";
+		std::cout << "--- Количество элементов: " << number_of_elements << " ---\n\n";
 		for (int i = 0; i < (int)table.size(); i++) {
 			if (table[i] != NULL) {
 				for (string b : *table[i]) {
-					std::cout << b << "\n";
+					std::cout <<"--- " << b << "\n";
 				}
 			}
 		}

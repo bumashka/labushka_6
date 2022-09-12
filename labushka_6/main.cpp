@@ -70,29 +70,30 @@ int main() {
 					break;
 				}
 				case 1: {
+					std::cout << "\n+++++ Добавление слова +++++\n\n";
 					string input = s_input();
 					std::cout << hash.insert(input);
 					break;
 				}
 				case 2: {
-					//std::cout << " [2] Удалить слово\n";
+					std::cout << "\n+++++ Удаление слова +++++\n\n";
 					string input = s_input();
 					std::cout << hash.erase(input);
 					break;
 				}
 				case 3: {
-					//std::cout << " [3] Найти слово\n";
+					std::cout << "\n+++++ Поиск слова +++++\n\n";
 					string input = s_input();
 					std::cout << hash.find(input);
 					break;
 				}
 				case 4: {
-					//std::cout << " [4] Дополнить словарь с помощью текста\n";
+					std::cout << "\n+++++ Дополнение словаря из текста +++++\n\n";
 					hash.fill_from_book(fillFrom());
 					break;
 				}
 				case 5: {
-					//std::cout << " [5] Очистить словарь\n";
+					std::cout << "\n+++++ Очистка словаря +++++\n\n";
 					hash.clear();
 					break;
 				}
@@ -122,25 +123,30 @@ int main() {
 					break;
 				}
 				case 1: {
+					std::cout << "\n+++++ Добавление слова +++++\n\n";
 					string input = s_input();
 					std::cout << tree.add(input);
 					break;
 				}
 				case 2: {
+					std::cout << "\n+++++ Удаление слова +++++\n\n";
 					string input = s_input();
 					std::cout << tree.erase(input);
 					break;
 				}
 				case 3: {
+					std::cout << "\n+++++ Поиск слова +++++\n\n";
 					string input = s_input();
 					std::cout << tree.contains(input);
 					break;
 				}
 				case 4: {
+					std::cout << "\n+++++ Дополнение словаря из текста +++++\n\n";
 					tree.fill_from_book(fillFrom());
 					break;
 				}
 				case 5: {
+					std::cout << "\n+++++ Очистка словаря +++++\n\n";
 					tree.clear();
 					break;
 				}

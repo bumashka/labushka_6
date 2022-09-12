@@ -67,9 +67,9 @@ void RedBlackTree::rightRotate(Node* node) {
 	node->parent = tmp;
 }
 
-bool RedBlackTree::contains(string word, Node* node) {
-	if (node == NULL)return false;
-	if (node->value == word)return true;
+RedBlackTree::Node* RedBlackTree::contains(string word, Node* node) {
+	if (node == NULL)return NULL;
+	if (node->value == word)return node;
 	if (node->value < word) return contains(word, node->right);
 	else return contains(word, node->left);
 }
@@ -227,13 +227,11 @@ void RedBlackTree::checkDoubleBlack(Node* doubleBlack) {
 				}
 				else {
 					if (sib->isLeftChild) {
-						// left right
 						sib->right->black = parent->black;
 						leftRotate(sib);
 						rightRotate(parent);
 					}
 					else {
-						// right right
 						sib->right->black = sib->black;
 						sib->black = parent->black;
 						leftRotate(parent);
@@ -242,7 +240,6 @@ void RedBlackTree::checkDoubleBlack(Node* doubleBlack) {
 				parent->black = true;
 			}
 			else {
-				// 2 black children
 				sib->black = false;
 				if (parent->black)
 					checkDoubleBlack(parent);
@@ -256,7 +253,6 @@ void RedBlackTree::deleteNode(Node* node) {
 
 	Node* replace = BSTreplace(node);
 
-	// True when replace and node are both black
 	bool bothBlack = ((replace == NULL || replace->black) && (node->black));
 
 	//Node* parent = node->parent;
@@ -372,7 +368,7 @@ RedBlackTree::Node* RedBlackTree::successor(Node* node) {
 
 	return temp;
 }
-RedBlackTree::Node* RedBlackTree::find(string word) {
+/*RedBlackTree::Node* RedBlackTree::find(string word) {
 	if (!contains(word, m_root)) return NULL;
 	Node* tmp = m_root;
 
@@ -385,4 +381,4 @@ RedBlackTree::Node* RedBlackTree::find(string word) {
 		}
 	}
 	return tmp;
-}
+}*/
